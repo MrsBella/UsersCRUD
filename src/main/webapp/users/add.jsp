@@ -57,36 +57,38 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i>Dodaj użytkownika</a>
+                            class="fas fa-download fa-sm text-white-50"></i>Lista użytkowników</a>
                 </div>
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class=" font-weight-bold text-primary">Lista użytkowników</h6>
+                        <h6 class=" font-weight-bold text-primary">Dodaj użytkownika</h6>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nazwa użytkownika</th>
-                                    <th>Email</th>
-                                    <th>Akcja</th>
-                                </tr>
-                                <c:forEach var="user" items="${users}">
-                                    <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.userName}</td>
-                                        <td>${user.email}</td>
-                                        <td>
-                                            <a href="">Usuń</a>
-                                            <a href="">Edit</a>
-                                            <a href="">Pokaż</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                            </table>
-                        </div>
+                        <form method="post">
+                            <div class="form-group">
+                                <label>
+                                    Nazwa
+                                    <input type="text" name="nazwa" placeholder="Nazwa użytkownika"
+                                           class="form-control" size="100"/>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Email
+                                    <input type="text" name="email" placeholder="Email użytkownika"
+                                           class="form-control" size="100"/>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Hasło
+                                    <input type="text" name="haslo" placeholder="Hasło użytkownika"
+                                           class="form-control" size="100"/>
+                                </label>
+                            </div>
+                            <button type="button" class="btn-primary btn">Zapisz</button>
+                        </form>
                     </div>
 
 
@@ -107,3 +109,4 @@
     <!-- End of Page Wrapper -->
 </body>
 </html>
+
