@@ -56,7 +56,7 @@
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    <a href="/users/list" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i>Lista użytkowników</a>
                 </div>
 
@@ -65,29 +65,30 @@
                         <h6 class=" font-weight-bold text-primary">Dodaj użytkownika</h6>
                     </div>
                     <div class="card-body">
-                        <form method="post">
+                        <form action="/users/add" method="post">
                             <div class="form-group">
                                 <label>
                                     Nazwa
-                                    <input type="text" name="nazwa" placeholder="Nazwa użytkownika"
-                                           class="form-control" size="100"/>
+                                    <input type="text" name="userName" placeholder="Nazwa użytkownika"
+                                           class="form-control col-12" />
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Email
                                     <input type="text" name="email" placeholder="Email użytkownika"
-                                           class="form-control" size="100"/>
+                                           class="form-control" size="180"/>
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Hasło
-                                    <input type="text" name="haslo" placeholder="Hasło użytkownika"
-                                           class="form-control" size="100"/>
+                                    <input type="text" name="password" placeholder="Hasło użytkownika"
+                                           class="form-control" size="180"/>
                                 </label>
                             </div>
-                            <button type="button" class="btn-primary btn">Zapisz</button>
+                            <button type="submit" class="btn-primary btn">Zapisz</button>
+
                         </form>
                     </div>
 

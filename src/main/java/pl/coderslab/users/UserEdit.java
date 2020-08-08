@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "UserEdit")
+@WebServlet(name = "UserEdit", value = "/users/edit")
 public class UserEdit extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -15,5 +15,9 @@ public class UserEdit extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        getServletContext().getRequestDispatcher("/users/edit.jsp?userName=" + request.getParameter("userName")
+                +"&email=" + request.getParameter("email")).forward(request, response);
     }
+
+
 }
