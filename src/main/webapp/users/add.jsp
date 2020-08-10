@@ -67,11 +67,11 @@
                     <div class="card-body">
                         <form action="/users/add" method="post">
                             <div class="form-group">
-                                <label>
+                                <label class="col-form-label">
                                     Nazwa
-                                    <input type="text" name="userName" placeholder="Nazwa użytkownika"
-                                           class="form-control col-12" />
-                                </label>
+
+                                </label><input type="text" name="userName" placeholder="Nazwa użytkownika"
+                                               class="form-control col-lg-12 col-md-8 col-sm-4 " />
                             </div>
                             <div class="form-group">
                                 <label>
@@ -83,7 +83,7 @@
                             <div class="form-group">
                                 <label>
                                     Hasło
-                                    <input type="text" name="password" placeholder="Hasło użytkownika"
+                                    <input type="password" name="password" placeholder="Hasło użytkownika"
                                            class="form-control" size="180"/>
                                 </label>
                             </div>
