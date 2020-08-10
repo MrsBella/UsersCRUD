@@ -65,26 +65,27 @@
                         <h6 class=" font-weight-bold text-primary">Edycja użytkownika</h6>
                     </div>
                     <div class="card-body">
-                        <form action="/users/add" method="post">
+                        <form action="/users/edit" method="post">
                             <div class="form-group">
+                                <input type="hidden" name="id" value="${user.id}"/>
                                 <label>
                                     Nazwa
-                                    <input type="text" name="nazwa" placeholder="${param.userName}"
-                                           class="form-control" size="100"/>
+                                    <input type="text" name="userName" value="${user.userName}"
+                                           class="form-control" size="180"/>
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Email
-                                    <input type="text" name="email" placeholder="${param.email}"
-                                           class="form-control" size="100"/>
+                                    <input type="text" name="email" value="${user.email}"
+                                           class="form-control" size="180"/>
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Hasło
-                                    <input type="text" name="haslo" placeholder="Hasło użytkownika"
-                                           class="form-control" size="100"/>
+                                    <input type="password" name="haslo" placeholder="Hasło użytkownika"
+                                           class="form-control" size="180" required/>
                                 </label>
                             </div>
                             <button type="submit" class="btn-primary btn">Zapisz</button>

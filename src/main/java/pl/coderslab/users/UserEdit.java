@@ -1,5 +1,8 @@
 package pl.coderslab.users;
 
+import pl.coderslab.utils.User;
+import pl.coderslab.utils.UserDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,13 +13,30 @@ import java.io.IOException;
 @WebServlet(name = "UserEdit", value = "/users/edit")
 public class UserEdit extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("userName");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        int id = Integer.parseInt(request.getParameter("id"));
 
+        UserDao userDao = new UserDao();
+        User user = userDao.read(id);
+        user.setUserName(name);
+        user.setEmail(email);
+        user.setPassword(password);
+
+        userDao.update(user);
+
+        response.sendRedirect("/users/list");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        getServletContext().getRequestDispatcher("/users/edit.jsp?userName=" + request.getParameter("userName")
-                +"&email=" + request.getParameter("email")).forward(request, response);
+        String id = request.getParameter("id");
+        UserDao userDao = new UserDao();
+        User read = userDao.read(Integer.parseInt(id));
+        request.setAttribute("user", read);
+
+        getServletContext().getRequestDispatcher("/users/edit.jsp").forward(request, response);
     }
 
 
