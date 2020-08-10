@@ -80,8 +80,8 @@
                                         <td>${user.email}</td>
                                         <td>
                                             <a href="">Usuń</a>
-                                            <a href="/users/edit?userName=${user.userName}&email=${user.email}">Edit</a>
-                                            <a href="">Pokaż</a>
+                                            <a href="/users/edit?id=${user.id}">Edit</a>
+                                            <a href="/users/show?id=${user.id}">Pokaż</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
