@@ -30,9 +30,6 @@
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                <!-- Sidebar Toggle (Topbar) -->
-
-
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
@@ -43,23 +40,18 @@
                             <i class="fas fa-search fa-fw"></i>
                         </a>
                         <!-- Dropdown - Messages -->
-
                     </li>
-
                 </ul>
-
             </nav>
             <!-- End of Topbar -->
             <!-- Begin Page Content -->
             <div class="container-fluid">
-
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
                     <a href="/users/list" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i>Lista użytkowników</a>
                 </div>
-
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class=" font-weight-bold text-primary">Dodaj użytkownika</h6>
@@ -67,11 +59,11 @@
                     <div class="card-body">
                         <form action="/users/add" method="post">
                             <div class="form-group">
-                                <label class="col-form-label">
+                                <label>
                                     Nazwa
-
-                                </label><input type="text" name="userName" placeholder="Nazwa użytkownika"
-                                               class="form-control col-lg-12 col-md-8 col-sm-4 " />
+                                    <input type="text" name="userName" placeholder="Nazwa użytkownika"
+                                           class="form-control" size="180"/>
+                                </label>
                             </div>
                             <div class="form-group">
                                 <label>
@@ -88,24 +80,17 @@
                                 </label>
                             </div>
                             <button type="submit" class="btn-primary btn">Zapisz</button>
-
                         </form>
                     </div>
-
-
                 </div>
-
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
-
 
             <%@ include file="/footer.jsp" %>
 
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
 </body>
